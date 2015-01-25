@@ -22,7 +22,9 @@ Author: Satoshi Iwasaki (yanqirenshi@gmail.com)
                :clack)
   :components ((:module "src"
                         :components
-                        ((:file "ghost"))))
+                        ((:file "package")
+			 (:file "class"   :depends-on ("package"))
+			 (:file "ghost"   :depends-on ("class")))))
   :description ""
   :long-description
   #.(with-open-file (stream (merge-pathnames

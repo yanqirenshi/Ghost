@@ -12,5 +12,9 @@
            #:description
            #:request-token-uri
            #:authorize-uri
-           #:access-token-uri))
+           #:access-token-uri
+           ;;
+           #:buddha-nature
+           #:buddhahood
+           #:nirvana))
 (in-package :ghost)

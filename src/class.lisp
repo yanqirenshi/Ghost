@@ -16,6 +16,14 @@
   (:documentation "実在を表わすクラス"))
 
 
+(defclass buddha-nature ()
+  ((buddhahood :accessor buddhahood
+               :initarg  :buddhahood
+               :initform nil)
+   (nirvana :accessor nirvana
+            :initarg  :nirvana
+            :initform nil)))
+
 (defclass naming ()
   ((name :documentation ""
          :accessor name

@@ -2,6 +2,7 @@
 (defpackage ghost
   (:use :cl)
   (:export #:ghost
+           #:nirvana!
            #:existence
            #:naming
            #:deccot

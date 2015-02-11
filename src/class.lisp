@@ -19,10 +19,11 @@
 (defclass buddha-nature ()
   ((buddhahood :accessor buddhahood
                :initarg  :buddhahood
-               :initform nil)
+               :initform (get-universal-time))
    (nirvana :accessor nirvana
             :initarg  :nirvana
             :initform nil)))
+
 
 (defclass naming ()
   ((name :documentation ""

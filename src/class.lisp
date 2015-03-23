@@ -37,10 +37,10 @@
 ;;;
 ;;; Core
 ;;;
-(defclass ghost (shinra:node) ())
+(defclass ghost (shinra:shin) ())
 
 
-(defclass deccot (existence shinra:node)
+(defclass deccot (existence shinra:ra)
   ((ghost :documentation ""
           :accessor ghost
           :initarg  :ghost
@@ -57,7 +57,7 @@
 ;;;
 ;;; Oauth
 ;;;
-(defclass oauth-provider (shinra:node)
+(defclass oauth-provider (shinra:shin)
   ((request-token-uri :documentation ""
                       :accessor request-token-uri
                       :initarg  :request-token-uri

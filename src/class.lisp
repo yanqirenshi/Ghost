@@ -49,7 +49,7 @@
 
 
 
-(defclass cyber-space (existence naming shinra:node) ())
+(defclass cyber-space (existence naming shinra:shin) ())
 
 
 

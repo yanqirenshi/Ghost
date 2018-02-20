@@ -3,12 +3,12 @@
 
 ## Target
 
-- [Qiita API v2](https://qiita.com/api/v2/docs#%E3%81%84%E3%81%84%E3%81%AD) 
+- [Github](https://developer.github.com/v3/)
+- [Qiita API v2](https://qiita.com/api/v2/docs#%E3%81%84%E3%81%84%E3%81%AD)
 - [GitLab API](https://docs.gitlab.com/ee/api/README.html)
-- [https://docs.gitlab.com/ee/api/README.html](https://docs.gitlab.com/ee/api/README.html)
-- [REST API v3](https://developer.github.com/v3/)
 - [Twitter Developers](Twitter Developers)
 - [Redmine API](http://www.redmine.org/projects/redmine/wiki/Rest_api)
+- [Slack](https://api.slack.com/)
 
 ## Usage
 

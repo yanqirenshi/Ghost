@@ -6,14 +6,17 @@
 
     <script>
      this.items = [
-         { label: 'Google' },
-         { label: 'Facebook' },
-         { label: 'Twitter' },
-         { label: 'Yahoo' },
-         { label: 'LINE' },
-         { label: 'Github' },
-         { label: 'Gitlab' },
-         { label: 'Bitbucket' },
+         { label: 'Google',    ref: 'https://developers.google.com/identity/sign-in/web/',       description: '' },
+         { label: 'Facebook',  ref: '',                                                          description: '' },
+         { label: 'Twitter',   ref: 'https://developer.twitter.com/',                            description: '' },
+         { label: 'Yahoo',     ref: '',                                                          description: '' },
+         { label: 'LINE',      ref: '',                                                          description: '' },
+         { label: 'Github',    ref: 'https://developer.github.com/v3/,'                          description: '' },
+         { label: 'Gitlab',    ref: 'https://docs.gitlab.com/ee/api/README.html',                description: '' },
+         { label: 'Bitbucket', ref: '',                                                          description: '' },
+         { label: 'Qiita',     ref: 'https://qiita.com/api/v2/docs#%E3%81%84%E3%81%84%E3%81%AD', description: '' },
+         { label: 'Redmine',   ref: 'http://www.redmine.org/projects/redmine/wiki/Rest_api',     description: '' },
+         { label: 'Slack',     ref: 'https://api.slack.com/',                                    description: '' },
      ];
      this.viewItems = () => {
          return this.items;

@@ -6,19 +6,20 @@
 
 というか、サイン・インするためのもの。
 
-## Target
-
-- [Github](https://developer.github.com/v3/)
-- [Qiita API v2](https://qiita.com/api/v2/docs#%E3%81%84%E3%81%84%E3%81%AD)
-- [GitLab API](https://docs.gitlab.com/ee/api/README.html)
-- [Twitter Developers](https://developer.twitter.com/)
-- [Redmine API](http://www.redmine.org/projects/redmine/wiki/Rest_api)
-- [Slack](https://api.slack.com/)
-- [Google Sign-In for Websites](https://developers.google.com/identity/sign-in/web/)
-
 ## Usage
 
-## Installation
+`web/` 配下がサンプルのようになっています。
+
+`web/` を以下のように使う感じです。
+1. 自分のプロジェクトにコピペする。
+2. 不要な部分を削る。
+3. 自分の好みに併せて整える。
+
+## Dependencies
+
+- [Riot.js](https://riot.js.org/ja/)
+- [bulma](https://bulma.io/)
+- [Google fonts](https://fonts.google.com/)
 
 ## Author
 

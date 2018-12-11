@@ -1,22 +1,8 @@
-<sign-in-email>
-    <section class="section" style="padding-top:0px;">
+<sign-in-title>
+    <section class="section" style="padding-bottom: 0px;">
         <div class="container">
-            <div class="card">
-                <div class="card-content">
-                    <input class="input"
-                           type="text"
-                           placeholder="Email"
-                           style="margin-bottom: 22px;">
-                    <input class="input"
-                           type="text"
-                           placeholder="Password">
-
-                    <div style="margin-top:22px;">
-                        <button class="button is-warning"
-                                style="width:100%;">Sign In</button>
-                    </div>
-                </div>
-            </div>
+            <h1 class="title is-1"
+                style="font-family:{fontFamily()}, cursive;">Ghost</h1>
         </div>
     </section>
 
@@ -49,10 +35,9 @@
     </script>
 
     <style>
-     sign-in-email .card {
-         width: 333px;
-         margin-left: auto;
-         margin-right: auto;
+     sign-in-title > .section > .container > .title {
+         text-align: center;
+         font-size: 222px;
      }
     </style>
-</sign-in-email>
+</sign-in-title>

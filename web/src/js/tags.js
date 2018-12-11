@@ -36,7 +36,7 @@ riot.tag2('sign-in-service', '<div> <div each="{item in viewItems()}" class="ser
          { label: 'Twitter',   ref: 'https://developer.twitter.com/',                            description: '' },
          { label: 'Yahoo',     ref: '',                                                          description: '' },
          { label: 'LINE',      ref: '',                                                          description: '' },
-         { label: 'Github',    ref: 'https://developer.github.com/v3/,'                          description: '' },
+         { label: 'Github',    ref: 'https://developer.github.com/v3/',                          description: '' },
          { label: 'Gitlab',    ref: 'https://docs.gitlab.com/ee/api/README.html',                description: '' },
          { label: 'Bitbucket', ref: '',                                                          description: '' },
          { label: 'Qiita',     ref: 'https://qiita.com/api/v2/docs#%E3%81%84%E3%81%84%E3%81%AD', description: '' },

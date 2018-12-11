@@ -64,7 +64,7 @@ riot.tag2('sign-in-service', '<div> <sign-in-service-google></sign-in-service-go
      };
 });
 
-riot.tag2('sign-in-title', '<section class="section" style="padding-bottom: 0px;"> <div class="container"> <h1 class="title is-1" riot-style="font-family:{fontFamily()}, cursive;">Ghost</h1> </div> </section>', 'sign-in-title > .section > .container > .title { text-align: center; font-size: 222px; text-shadow: 0px 0px 22px #333; }', '', function(opts) {
+riot.tag2('sign-in-title', '<section class="section" style="padding-bottom: 0px; margin-top: 33px;"> <div class="container"> <h1 class="title is-1" riot-style="font-family:{fontFamily()}, cursive;">Ghost</h1> </div> </section>', 'sign-in-title > .section > .container > .title { text-align: center; font-size: 222px; text-shadow: 0px 0px 22px #333; }', '', function(opts) {
      this.fonts = [ 'Pacifico',
                     'Dancing Script',
                     'Shadows Into Light',

@@ -1,5 +1,5 @@
 <sign-in-title>
-    <section class="section" style="padding-bottom: 0px;">
+    <section class="section" style="padding-bottom: 0px; margin-top: 33px;">
         <div class="container">
             <h1 class="title is-1"
                 style="font-family:{fontFamily()}, cursive;">Ghost</h1>

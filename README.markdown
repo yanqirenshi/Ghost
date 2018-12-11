@@ -1,6 +1,6 @@
 # Ghost
 
-![画面イメージ](https://github.com/yanqirenshi/ghost/tree/master/web/src/assets/images/ss-self.png)
+![画面イメージ](https://github.com/yanqirenshi/ghost/blob/master/web/src/assets/images/ss-self.png)
 
 各種ネットサービスのユーザーを管理するためのライブラリ。
 

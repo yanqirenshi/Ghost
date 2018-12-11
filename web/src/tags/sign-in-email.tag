@@ -1,12 +1,20 @@
 <sign-in-email>
-    <section class="section" style="padding-top:0px;">
+    <section class="section" style="padding-top:11px;">
         <div class="container">
-            <div class="card">
+            <div class="card ghost-box-shadow">
+
+                <header class="card-header">
+                    <p class="card-header-title">
+                        Sign In
+                    </p>
+                </header>
+
                 <div class="card-content">
                     <input class="input"
                            type="text"
                            placeholder="Email"
                            style="margin-bottom: 22px;">
+
                     <input class="input"
                            type="text"
                            placeholder="Password">
@@ -53,6 +61,7 @@
          width: 333px;
          margin-left: auto;
          margin-right: auto;
+         border-radius: 8px 8px 0px 0px;
      }
     </style>
 </sign-in-email>

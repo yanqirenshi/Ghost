@@ -38,6 +38,7 @@
      sign-in-title > .section > .container > .title {
          text-align: center;
          font-size: 222px;
+         text-shadow: 0px 0px 22px #333;
      }
     </style>
 </sign-in-title>

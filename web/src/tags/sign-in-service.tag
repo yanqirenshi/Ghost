@@ -6,20 +6,22 @@
 
     <script>
      this.items = [
-         { label: 'Google',    ref: 'https://developers.google.com/identity/sign-in/web/',       description: '' },
-         { label: 'Facebook',  ref: '',                                                          description: '' },
-         { label: 'Twitter',   ref: 'https://developer.twitter.com/',                            description: '' },
-         { label: 'Yahoo',     ref: '',                                                          description: '' },
-         { label: 'LINE',      ref: '',                                                          description: '' },
-         { label: 'Github',    ref: 'https://developer.github.com/v3/',                          description: '' },
-         { label: 'Gitlab',    ref: 'https://docs.gitlab.com/ee/api/README.html',                description: '' },
-         { label: 'Bitbucket', ref: '',                                                          description: '' },
-         { label: 'Qiita',     ref: 'https://qiita.com/api/v2/docs#%E3%81%84%E3%81%84%E3%81%AD', description: '' },
-         { label: 'Redmine',   ref: 'http://www.redmine.org/projects/redmine/wiki/Rest_api',     description: '' },
-         { label: 'Slack',     ref: 'https://api.slack.com/',                                    description: '' },
+         { label: 'Google',    ref: 'https://developers.google.com/identity/sign-in/web/',       description: '', display: true  },
+         { label: 'Facebook',  ref: '',                                                          description: '', display: false },
+         { label: 'Twitter',   ref: 'https://developer.twitter.com/',                            description: '', display: false },
+         { label: 'Yahoo',     ref: '',                                                          description: '', display: false },
+         { label: 'LINE',      ref: '',                                                          description: '', display: false },
+         { label: 'Github',    ref: 'https://developer.github.com/v3/',                          description: '', display: false },
+         { label: 'Gitlab',    ref: 'https://docs.gitlab.com/ee/api/README.html',                description: '', display: false },
+         { label: 'Bitbucket', ref: '',                                                          description: '', display: false },
+         { label: 'Qiita',     ref: 'https://qiita.com/api/v2/docs#%E3%81%84%E3%81%84%E3%81%AD', description: '', display: false },
+         { label: 'Redmine',   ref: 'http://www.redmine.org/projects/redmine/wiki/Rest_api',     description: '', display: false },
+         { label: 'Slack',     ref: 'https://api.slack.com/',                                    description: '', display: false },
      ];
      this.viewItems = () => {
-         return this.items;
+         return this.items.filter((d)=>{
+             return d.display;
+         });
      };
     </script>
 

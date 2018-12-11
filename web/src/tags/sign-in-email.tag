@@ -10,23 +10,34 @@
                 </header>
 
                 <div class="card-content">
-                    <input class="input"
-                           type="text"
-                           placeholder="Email"
-                           style="margin-bottom: 22px;">
+                    <form action="/ghost/sign/in" method="post">
+                        <input class="input"
+                               placeholder="Email"
+                               style="margin-bottom: 22px;"
+                               type="email"
+                               name="mail">
 
-                    <input class="input"
-                           type="text"
-                           placeholder="Password">
+                        <input class="input"
+                               placeholder="Password"
+                               type="password"
+                               name="password">
 
-                    <div style="margin-top:22px;">
-                        <button class="button is-warning"
-                                style="width:100%;">Sign In</button>
-                    </div>
+                        <div style="margin-top:22px;">
+                            <button class="button is-warning"
+                                    style="width:100%;"
+                                    onclick={clickSignin}
+                                    type="submit">Sign In</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
+
+    <script>
+     this.clickSignin = () => {
+     };
+    </script>
 
     <script>
      this.fonts = [ 'Pacifico',

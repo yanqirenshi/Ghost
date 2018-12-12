@@ -10,7 +10,9 @@
                 </header>
 
                 <div class="card-content">
-                    <form action="/ghost/sign/in" method="post">
+                    <form action="/ghost/api/v1/sign/in"
+                          method="post"
+                          enctype="application/json">
                         <input class="input"
                                placeholder="Email"
                                style="margin-bottom: 22px;"

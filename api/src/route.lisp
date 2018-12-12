@@ -4,7 +4,8 @@
         #:caveman2
         #:lack.middleware.validation
         #:ghost.api.render
-        #:ghost.api.utililties)
+        #:ghost.api.utililties
+        #:ghost.controller)
   (:export #:*route*))
 (in-package :ghost.api.route)
 
@@ -21,16 +22,17 @@
 ;;;;; Routing rules
 ;;;;;
 (defroute "/" ()
-  (render-json "ネットは広大だわ・・・・・・・・"))
+  (let* ((messages '("そう囁くのよ・・・・・・私のゴーストが "
+                    "さて・・・どこへ行こうかしら、ネットは広大だわ・・・・・・・・"))
+         (i (length messages)))
+    (render-json (nth i messages))))
+
 
 (defroute ("/sign/in" :method :POST) (&key |mail| |password|)
-  (let ((mail-address |mail|)
+  (let ((graph nil)
+        (email-address |mail|)
         (password |password|))
-    ;; mail-address から mail 取得する。
-    ;; mail を取得する場合、password が正しいか確認する。
-    ;; 取得した mail から ghost を取得する。
-    ;; ghost を session へ記録する。
-    (render-json "ネットは広大だわ・・・・・・・・")))
+    (render-json (sign-in-by-email graph email-address password))))
 
 
 ;;;;;

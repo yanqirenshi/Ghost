@@ -30,7 +30,9 @@ Author: Satoshi Iwasaki (yanqirenshi@gmail.com)
                                        (:file "cyber-space")
                                        (:file "oauth")
                                        (:file "edge")))
-                         (:file "ghost"))))
+                         (:file "ghost")
+                         (:file "email")
+                         (:file "ghost-deccot"))))
   :description ""
   :long-description
   #.(with-open-file (stream (merge-pathnames

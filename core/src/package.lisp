@@ -17,5 +17,8 @@
            ;;
            #:buddha-nature
            #:buddhahood
-           #:nirvana))
+           #:nirvana)
+  (:export #:get-email
+           #:auth-deccot
+           #:deccot-ghost))
 (in-package :ghost)

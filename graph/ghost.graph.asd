@@ -9,7 +9,8 @@
   :depends-on ()
   :components ((:module "src"
                 :components
-                ((:file "ghost.graph"))))
+                ((:file "package")
+                 (:file "graph"))))
   :description ""
   :long-description
   #.(read-file-string

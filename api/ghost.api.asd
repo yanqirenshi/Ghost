@@ -9,7 +9,9 @@
   :depends-on ()
   :components ((:module "src"
                 :components
-                ((:file "package")
+                ((:module "controller"
+                  :components ((:file "package")))
+                 (:file "package")
                  (:file "utililties")
                  (:file "render")
                  (:file "route"))))

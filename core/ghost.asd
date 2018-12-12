@@ -23,8 +23,14 @@ Author: Satoshi Iwasaki (yanqirenshi@gmail.com)
   :components ((:module "src"
                         :components
                         ((:file "package")
-			 (:file "class"   :depends-on ("package"))
-			 (:file "ghost"   :depends-on ("class")))))
+                         (:module "classes"
+                          :components ((:file "base")
+                                       (:file "ghost")
+                                       (:file "deccots")
+                                       (:file "cyber-space")
+                                       (:file "oauth")
+                                       (:file "edge")))
+                         (:file "ghost"   :depends-on ("class")))))
   :description ""
   :long-description
   #.(with-open-file (stream (merge-pathnames

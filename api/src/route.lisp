@@ -24,8 +24,12 @@
   (render-json "ネットは広大だわ・・・・・・・・"))
 
 (defroute ("/sign/in" :method :POST) (&key |mail| |password|)
-  (let ((mail |mail|)
+  (let ((mail-address |mail|)
         (password |password|))
+    ;; mail-address から mail 取得する。
+    ;; mail を取得する場合、password が正しいか確認する。
+    ;; 取得した mail から ghost を取得する。
+    ;; ghost を session へ記録する。
     (render-json "ネットは広大だわ・・・・・・・・")))
 
 

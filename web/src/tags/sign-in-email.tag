@@ -1,5 +1,5 @@
 <sign-in-email>
-    <section class="section" style="padding-top:11px;">
+    <section class="section">
         <div class="container">
             <div class="card ghost-box-shadow">
 

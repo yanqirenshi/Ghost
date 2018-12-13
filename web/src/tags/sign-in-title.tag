@@ -25,8 +25,8 @@
 
     <script>
      this.title = () => {
-         console.log(_GHOST_CONFIG.title);
          let title = _GHOST_CONFIG.title.contents;
+
          return title ? title : '????????'
      }
     </script>

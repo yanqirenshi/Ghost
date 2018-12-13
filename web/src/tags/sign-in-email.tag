@@ -38,35 +38,7 @@
 
     <script>
      this.formAction = () => {
-         return _GHOST_CONFIG.server.sign.in.in;
-     };
-    </script>
-
-    <script>
-     this.fonts = [ 'Pacifico',
-                    'Dancing Script',
-                    'Shadows Into Light',
-                    'Mountains of Christmas',
-                    'Amatic SC',
-                    'Kaushan Script',
-                    'Satisfy',
-                    'Great Vibes',
-                    'Caveat',
-                    'Sacramento',
-                    'Bad Script',
-                    'Rock Salt',
-                    'Yellowtail',
-                    'Cabin Sketch',
-                    'Parisienne',
-                    'Nothing You Could Do',
-                    'Srisakdi',
-                    'Allura',
-                    'Reenie Beanie'];
-
-     this.fontFamily = () => {
-         let len = this.fonts.length;
-         let i = Math.round( Math.random() * len );
-         return this.fonts[i];
+         return _GHOST_CONFIG.server.sign.in.action;
      };
     </script>
 

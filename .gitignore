@@ -9,4 +9,6 @@
 
 web/src/config.js
 web/src/index.html
+web/src/index.css
+web/src/index.js
 web/src/assets/images/backgroung/*.jpg

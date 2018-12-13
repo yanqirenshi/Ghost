@@ -1,0 +1,18 @@
+body {
+    width:100vw;
+    height:100vh;
+    background-image: url(assets/images/backgroung_koukaku.png);
+    background-size: cover;
+}
+
+app {
+    width:100vw;
+    height:100vh;
+    position: fixed;
+
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.ghost-box-shadow {
+    box-shadow: 0px 0px 22px #333;
+}

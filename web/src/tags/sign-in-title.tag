@@ -2,36 +2,33 @@
     <section class="section" style="padding-bottom: 0px; margin-top: 33px;">
         <div class="container">
             <h1 class="title is-1"
-                style="font-family:{fontFamily()}, cursive;">Ghost</h1>
+                style={title_style()}>{title()}</h1>
         </div>
     </section>
 
     <script>
-     this.fonts = [ 'Pacifico',
-                    'Dancing Script',
-                    'Shadows Into Light',
-                    'Mountains of Christmas',
-                    'Amatic SC',
-                    'Kaushan Script',
-                    'Satisfy',
-                    'Great Vibes',
-                    'Caveat',
-                    'Sacramento',
-                    'Bad Script',
-                    'Rock Salt',
-                    'Yellowtail',
-                    'Cabin Sketch',
-                    'Parisienne',
-                    'Nothing You Could Do',
-                    'Srisakdi',
-                    'Allura',
-                    'Reenie Beanie'];
+     this.title_style = () => {
+         let font = this.fontFamily();
+
+         return 'font-family:'+ font.code + ', cursive;' +
+                'font-size:' + font.size + ';'
+     };
 
      this.fontFamily = () => {
-         let len = this.fonts.length;
+         let fonts = _GHOST_CONFIG.title.fonts;
+         let len = fonts.length;
          let i = Math.round( Math.random() * len );
-         return this.fonts[i];
+
+         return fonts[i];
      };
+    </script>
+
+    <script>
+     this.title = () => {
+         console.log(_GHOST_CONFIG.title);
+         let title = _GHOST_CONFIG.title.contents;
+         return title ? title : '????????'
+     }
     </script>
 
     <style>

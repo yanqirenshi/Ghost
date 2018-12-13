@@ -6,3 +6,6 @@
 *.x86f
 *~
 .#*
+
+web/src/config.js
+web/src/index.html

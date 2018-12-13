@@ -23,7 +23,7 @@
 ;;;;;
 (defroute "/" ()
   (let* ((messages '("そう囁くのよ・・・・・・私のゴーストが "
-                    "さて・・・どこへ行こうかしら、ネットは広大だわ・・・・・・・・"))
+                     "さて・・・どこへ行こうかしら、ネットは広大だわ・・・・・・・・"))
          (i (length messages)))
     (render-json (nth i messages))))
 
@@ -33,6 +33,10 @@
         (email-address |mail|)
         (password |password|))
     (render-json (sign-in-by-email graph email-address password))))
+
+
+(defroute ("/sign/out" :method :POST) ()
+  (render-json (sign-out)))
 
 
 ;;;;;

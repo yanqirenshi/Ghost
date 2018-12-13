@@ -6,7 +6,8 @@
                 #:request-cookies
                 #:*request*
                 #:*session*)
-  (:export #:sign-in-by-email))
+  (:export #:sign-in-by-email
+           #:sign-out))
 (in-package :ghost.controller)
 
 
@@ -25,6 +26,10 @@
         (session *session*))
     (setf (gethash session-key session) (up:%id ghost))))
 
+(defun remove-session ()
+  (let ((session-key (get-session-key))
+        (session *session*))
+    (remhash session-key session)))
 
 ;;;;;
 ;;;;; sign-in-by-email
@@ -44,3 +49,11 @@
   (let ((ghost (get-sign-in-email-ghost graph email-address password)))
     (save-session ghost)
     (list :|status| "success")))
+
+
+;;;;;
+;;;;; sign-out
+;;;;;
+(defun sign-out ()
+  (remove-session)
+  (list :|status| "success"))

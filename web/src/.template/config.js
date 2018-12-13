@@ -34,5 +34,8 @@ const _GHOST_CONFIG = {
          { label: 'Qiita',     ref: 'https://qiita.com/api/v2/docs#%E3%81%84%E3%81%84%E3%81%AD', description: '', display: false, tag: '' },
          { label: 'Redmine',   ref: 'http://www.redmine.org/projects/redmine/wiki/Rest_api',     description: '', display: false, tag: '' },
          { label: 'Slack',     ref: 'https://api.slack.com/',                                    description: '', display: false, tag: '' },
+    ],
+    background: [
+        { url: 'assets/images/backgroung_koukaku.png' },
     ]
 };

@@ -10,7 +10,7 @@
                 </header>
 
                 <div class="card-content">
-                    <form action="/ghost/api/v1/sign/in"
+                    <form action={formAction()}
                           method="post"
                           enctype="application/json">
                         <input class="input"
@@ -37,7 +37,8 @@
     </section>
 
     <script>
-     this.clickSignin = () => {
+     this.formAction = () => {
+         return _GHOST_CONFIG.server.sign.in.in;
      };
     </script>
 

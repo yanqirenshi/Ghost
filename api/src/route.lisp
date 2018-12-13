@@ -6,9 +6,15 @@
         #:ghost.api.render
         #:ghost.api.utililties
         #:ghost.controller)
-  (:export #:*route*))
+  (:export #:*route*
+           #:*redirect-url-success-sign-in*))
 (in-package :ghost.api.route)
 
+
+;;;;;
+;;;;; Variables
+;;;;;
+(defvar *redirect-url-success-sign-in* nil)
 
 ;;;;;
 ;;;;; Router
@@ -32,7 +38,10 @@
   (let ((graph (get-graph))
         (email-address |mail|)
         (password |password|))
-    (render-json (sign-in-by-email graph email-address password))))
+    (let ((result (sign-in-by-email graph email-address password)))
+      (if (null *redirect-url-success-sign-in*)
+          result
+          (caveman2:redirect *redirect-url-success-sign-in*)))))
 
 
 (defroute ("/sign/out" :method :POST) ()

@@ -32,6 +32,7 @@ Author: Satoshi Iwasaki (yanqirenshi@gmail.com)
                                (:file "84kye")
                                (:file "edge")))
                  (:file "ghost")
+                 (:file "84key")
                  (:file "email")
                  (:module "relationships"
                   :components ((:file "ghost-deccot")

@@ -16,7 +16,7 @@
 (defclass buddha-nature ()
   ((buddhahood :accessor buddhahood
                :initarg  :buddhahood
-               :initform (get-universal-time))
+               :initform (local-time:now))
    (nirvana :accessor nirvana
             :initarg  :nirvana
             :initform nil)))

@@ -29,7 +29,7 @@
 
 
 (defroute ("/sign/in" :method :POST) (&key |mail| |password|)
-  (let ((graph nil)
+  (let ((graph (get-graph))
         (email-address |mail|)
         (password |password|))
     (render-json (sign-in-by-email graph email-address password))))

@@ -1,4 +1,4 @@
 (in-package :ghost)
 
 
-(defclass ghost (shinra:shin) ())
+(defclass ghost (shinra:shin buddha-nature) ())

@@ -31,9 +31,9 @@
 ;;;;;
 (defun get-sign-in-email (graph email-address password)
   (let ((email (ghost:get-email graph :address email-address)))
-    (unless (or email (ghost:auth-deccot email password))
-      (throw-code 401))
-    email))
+    (or email (throw-code 401))
+    (when (ghost:auth-deccot graph email password)
+      email)))
 
 (defun get-sign-in-email-ghost (graph email-address password)
   (let ((email (get-sign-in-email graph email-address password)))

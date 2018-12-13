@@ -14,7 +14,7 @@
 ;;;;; session
 ;;;;;
 (defvar *session-key-name*
-  "lack.session")
+  "ghost.session")
 
 (defun get-session-key ()
   (let ((cookie (request-cookies *request*)))

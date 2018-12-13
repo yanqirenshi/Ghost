@@ -1,8 +1,9 @@
 (in-package :ghost)
 
 (defun get-email (graph &key address)
-  (list graph address))
+  (first (shinra:find-vertex graph 'email :slot 'address :value address)))
 
-(defgeneric auth-deccot (deccot passord)
-  (:method ((deccot email) (password string))
-    (list deccot password)))
+(defgeneric auth-deccot (graph deccot passord)
+  (:method (graph (deccot email) (password string))
+    (let ((84key (deccot-84key graph deccot)))
+      (turn-the-key 84key password))))

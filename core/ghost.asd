@@ -21,18 +21,21 @@ Author: Satoshi Iwasaki (yanqirenshi@gmail.com)
                :cl-oauth
                :clack)
   :components ((:module "src"
-                        :components
-                        ((:file "package")
-                         (:module "classes"
-                          :components ((:file "base")
-                                       (:file "ghost")
-                                       (:file "deccots")
-                                       (:file "cyber-space")
-                                       (:file "oauth")
-                                       (:file "edge")))
-                         (:file "ghost")
-                         (:file "email")
-                         (:file "ghost-deccot"))))
+                :components
+                ((:file "package")
+                 (:module "classes"
+                  :components ((:file "base")
+                               (:file "ghost")
+                               (:file "deccots")
+                               (:file "cyber-space")
+                               (:file "oauth")
+                               (:file "84kye")
+                               (:file "edge")))
+                 (:file "ghost")
+                 (:file "email")
+                 (:module "relationships"
+                  :components ((:file "ghost-deccot")
+                               (:file "deccot-84key"))))))
   :description ""
   :long-description
   #.(with-open-file (stream (merge-pathnames

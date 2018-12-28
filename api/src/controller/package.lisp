@@ -7,7 +7,8 @@
                 #:*request*
                 #:*session*)
   (:export #:sign-in-by-email
-           #:sign-out))
+           #:sign-out
+           #:get-session))
 (in-package :ghost.controller)
 
 
@@ -20,6 +21,11 @@
 (defun get-session-key ()
   (let ((cookie (request-cookies *request*)))
     (cdr (assoc *session-key-name* cookie :test 'string=))))
+
+(defun get-session ()
+  (let ((session-key (get-session-key))
+        (session *session*))
+    (gethash session-key session)))
 
 (defun save-session (ghost)
   (let ((session-key (get-session-key))
@@ -36,12 +42,13 @@
 ;;;;;
 (defun get-sign-in-email (graph email-address password)
   (let ((email (ghost:get-email graph :address email-address)))
-    (or email (throw-code 401))
+    (unless email (throw-code 401))
     (when (ghost:auth-deccot graph email password)
       email)))
 
 (defun get-sign-in-email-ghost (graph email-address password)
   (let ((email (get-sign-in-email graph email-address password)))
+    (unless email (throw-code 401))
     (let ((ghost (ghost:deccot-ghost graph email)))
       (or ghost (throw-code 401)))))
 

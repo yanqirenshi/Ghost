@@ -7,13 +7,15 @@
         #:ghost.api.utililties
         #:ghost.controller)
   (:export #:*route*
-           #:*redirect-url-success-sign-in*))
+           #:*redirect-url-success-sign-in*
+           #:*redirect-url-sign-in*))
 (in-package :ghost.api.route)
 
 
 ;;;;;
 ;;;;; Variables
 ;;;;;
+(defvar *redirect-url-sign-in* nil)
 (defvar *redirect-url-success-sign-in* nil)
 
 ;;;;;
@@ -33,6 +35,11 @@
          (i (length messages)))
     (render-json (nth i messages))))
 
+(defroute "/session/check" ()
+  (let ((session (get-session)))
+    (unless session
+      (caveman2:redirect *redirect-url-sign-in*))
+    (render-json (list :|_id| session :|_class| "GHOST"))))
 
 (defroute ("/sign/in" :method :POST) (&key |mail| |password|)
   (let ((graph (get-graph))

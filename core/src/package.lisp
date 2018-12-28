@@ -18,6 +18,8 @@
            #:buddha-nature
            #:buddhahood
            #:nirvana)
+  (:export #:get-ghost
+           #:tx-make-ghost)
   (:export #:get-email
            #:auth-deccot
            #:deccot-ghost))

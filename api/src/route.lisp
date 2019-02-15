@@ -52,7 +52,8 @@
 
 
 (defroute ("/sign/out" :method :POST) ()
-  (render-json (sign-out)))
+  (sign-out)
+  (caveman2:redirect *redirect-url-sign-in*))
 
 
 ;;;;;

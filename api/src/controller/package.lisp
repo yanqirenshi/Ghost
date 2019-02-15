@@ -34,8 +34,11 @@
     (setf (gethash session-key session) (up:%id ghost))))
 
 (defun remove-session ()
+  (format t "~S~%" "4-")
   (let ((session-key (get-session-key))
         (session *session*))
+    (format t "ghost=~S~%" session-key)
+    (format t "ghost=~S~%" (alexandria:hash-table-alist *session*))
     (remhash session-key session)))
 
 ;;;;;
@@ -63,5 +66,7 @@
 ;;;;; sign-out
 ;;;;;
 (defun sign-out ()
+  (format t "~S~%" "1-")
   (remove-session)
-  (list :|status| "success"))
+  (format t "~S~%" "3-")
+ (list :|status| "success"))

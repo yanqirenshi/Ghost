@@ -36,7 +36,8 @@ Author: Satoshi Iwasaki (yanqirenshi@gmail.com)
                  (:file "email")
                  (:module "relationships"
                   :components ((:file "ghost-deccot")
-                               (:file "deccot-84key"))))))
+                               (:file "deccot-84key")))
+                 (:file "top-level-operators"))))
   :description ""
   :long-description
   #.(with-open-file (stream (merge-pathnames

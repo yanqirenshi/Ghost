@@ -1,5 +1,5 @@
 (defpackage ghost.controller
-  (:nicknames ghost.ctlr)
+  (:nicknames :ghost.ctlr)
   (:use :cl)
   (:import-from :caveman2
                 #:throw-code
@@ -8,7 +8,8 @@
                 #:*session*)
   (:export #:sign-in-by-email
            #:sign-out
-           #:get-session))
+           #:get-session
+           #:*session-key-name*))
 (in-package :ghost.controller)
 
 

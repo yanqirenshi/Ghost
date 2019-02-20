@@ -1,4 +1,5 @@
 (defpackage ghost.api.utililties
+  (:nicknames :ghost.api.util)
   (:use #:cl)
   (:export #:get-graph))
 (in-package :ghost.api.utililties)

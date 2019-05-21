@@ -55,6 +55,46 @@
   (sign-out)
   (caveman2:redirect *redirect-url-sign-in*))
 
+;;;;;
+;;;;; Draft or Temprary
+;;;;;
+(defroute ("/emails/password" :method :POST) (&key |password_old| |password_new|)
+  (let ((session (get-session))
+        (graph (get-graph))
+        (password_old (string-trim '(#\Space #\Tab #\Newline) |password_old|))
+        (password_new (string-trim '(#\Space #\Tab #\Newline) |password_new|)))
+    (unless session
+      (caveman2:redirect *redirect-url-sign-in*))
+    (render-json (change-emails-password graph session password_old password_new))))
+
+(defroute "/ghosts/:id" (&key id)
+  (let ((graph (get-graph)))
+    (render-json
+     (cond ((string= "temporary" id)
+            (ghost.ctlr:find-ghosts graph))
+           ((string= "session" id)
+            (ghost.ctlr:session-ghost graph (get-session)))
+           (t :null)))))
+
+(defroute "/list/ghosts/with/email" ()
+  (let ((graph (get-graph)))
+    (render-json (ghost.ctlr:list-ghosts-with-email graph))))
+
+(defroute "/list/ghosts/with/email" ()
+  (let ((graph (get-graph)))
+    (render-json (ghost.ctlr:list-ghosts-with-email graph))))
+
+(defroute ("/ghosts/emails" :method :POST) (&key |mail| |password|)
+  (let ((graph (get-graph))
+        (email-address (quri:url-decode |mail|))
+        (password      (quri:url-decode |password|)))
+    (validation email-address :email  :require t)
+    (validation password      :string :require t)
+    (ghost::tx-make-ghost-with-email-password graph
+                                              :address  email-address
+                                              :password password)
+    (render-json (list :code 201))))
+
 
 ;;;;;
 ;;;;; Error pages

@@ -12,3 +12,17 @@
                                  :to deccot
                                  :vertex-class 'ghost
                                  :edge-type :have-to))))
+
+(defgeneric ghost-deccot-email (graph ghost)
+  (:method (graph (ghost ghost))
+    (first (shinra:find-r-vertex graph 'edge
+                                 :from ghost
+                                 :vertex-class 'email
+                                 :edge-type :have-to))))
+
+(defgeneric ghost-deccot-emails (graph ghost)
+  (:method (graph (ghost ghost))
+    (shinra:find-r-vertex graph 'edge
+                          :from ghost
+                          :vertex-class 'email
+                          :edge-type :have-to)))

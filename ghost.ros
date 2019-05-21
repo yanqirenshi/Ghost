@@ -1,0 +1,29 @@
+#!/bin/sh
+#|-*- mode:lisp -*-|#
+#|
+exec ros -Q -- $0 "$@"
+|#
+(progn ;;init forms
+  (ros:ensure-asdf)
+  ;;#+quicklisp (ql:quickload '() :silent t)
+  (ql:quickload :ghost.graph)
+  (ql:quickload :ghost)
+  (ql:quickload :ghost.api))
+
+(defpackage :ros.script.ghost.3767395855
+  (:use :cl))
+(in-package :ros.script.ghost.3767395855)
+
+(defun main (&rest argv)
+  (declare (ignorable argv))
+  (ghost.graph:start)
+  (setf strobolights:*additional-components*
+        '((:mount "/ghost/api/v1" ghost.api.route:*route*)))
+  (do ((i 0 (1+ i)))
+      (nil)
+    (when (= 666 i)
+      (gc))
+    (when (= 88888888 i)
+      (setf i 0)
+      (gc :full t))))
+;;; vim: set ft=lisp lisp:

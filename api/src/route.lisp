@@ -90,9 +90,10 @@
         (password      (quri:url-decode |password|)))
     (validation email-address :email  :require t)
     (validation password      :string :require t)
-    (ghost::tx-make-ghost-with-email-password graph
-                                              :address  email-address
-                                              :password password)
+    (up:execute-transaction
+     (ghost::tx-make-ghost-with-email-password graph
+                                               :address  email-address
+                                               :password password))
     (render-json (list :code 201))))
 
 

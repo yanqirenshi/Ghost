@@ -133,7 +133,7 @@
       (assert mails)
       (let ((84key-list (find-change-emails-password graph password_old password_new mails)))
         (up:execute-transaction 
-         (change-emails-passwords graph password_old password_new 84key-list))
+         (tx-change-emails-passwords graph password_old password_new 84key-list))
         (list :count (length 84key-list))))))
 
 

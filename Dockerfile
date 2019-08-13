@@ -22,13 +22,13 @@ MAINTAINER Renshi <yanqirenshi@gmail.com>
 #####   ???
 ##### ################################################################
 USER cl-user
-WORKDIR /home/cl-user
+WORKDIR /home/cl-user/prj/
 
 
 #####
 ##### /home/cl-user/prj/ に コードをコピーする
 #####
-
+CMD ["git", "clone", "https://github.com/yanqirenshi/Ghost.git"]
 
 #####
 ##### .asdf を ~/.asdf にシンボリックリンクを作成する。

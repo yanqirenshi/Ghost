@@ -10,7 +10,13 @@
   :components ((:module "src"
                 :components
                 ((:module "controller"
-                  :components ((:file "package")))
+                  :components ((:file "package")
+                               (:file "session")
+                               (:file "sign-in")
+                               (:file "sign-out")
+                               (:file "ghosts")
+                               (:file "email")
+                               (:file "list")))
                  (:file "package")
                  (:file "utililties")
                  (:file "render")

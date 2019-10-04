@@ -8,11 +8,17 @@
                 #:request-cookies
                 #:*request*
                 #:*session*)
-  (:export #:sign-in-by-email
+  (:export #:sign-in
            #:sign-out
+           #:check-session
+           #:change-emails-password
+           #:get-ghost
+           #:make-ghost-with-email-password)
+  (:export #:*redirect-url-success-sign-in*
+           #:*redirect-url-sign-in*)
+  (:export #:sign-in-by-email
            #:get-session
            #:*session-key-name*
-           #:change-emails-password
            #:session-ghost
            #:find-ghosts)
   (:export #:list-ghosts-with-email))
@@ -75,15 +81,27 @@
 
 
 ;;;;;
+;;;;; sign-in
+;;;;;
+(defvar *redirect-url-sign-in* nil)
+(defvar *redirect-url-success-sign-in* nil)
+
+(defun sign-in (graph email-address password)
+  (let ((result (sign-in-by-email graph email-address password)))
+      (if (null *redirect-url-success-sign-in*)
+          result
+          (caveman2:redirect *redirect-url-success-sign-in*))))
+
+;;;;;
 ;;;;; sign-out
 ;;;;;
 (defun sign-out ()
   (remove-session)
-  (list :|status| "success"))
+  (caveman2:redirect *redirect-url-sign-in*))
 
 
 ;;;;;
-;;;;; sign-out
+;;;;; find-ghosts
 ;;;;;
 (defun find-ghosts-to-plist (ghost email)
   (let ((email-plist (list :|_id|         (up:%id email)
@@ -107,6 +125,12 @@
     out))
 
 
+(defun check-session ()
+  (let ((session (get-session)))
+    (unless session
+      (caveman2:redirect *redirect-url-sign-in*))
+    (list :|_id| session :|_class| "GHOST")))
+
 ;;;;;
 ;;;;; change password
 ;;;;;
@@ -125,6 +149,8 @@
           (cons 84key (change-emails-password-cor graph password_old password_new (cdr mails)))))))
 
 (defun change-emails-password (graph ghost-id password_old password_new)
+  (unless ghost-id
+    (caveman2:redirect *redirect-url-sign-in*))
   (assert (or password_old (= 0 (length password_old))))
   (assert (or password_new (= 0 (length password_new))))
   (let ((ghost (ghost:get-ghost graph :%id ghost-id)))

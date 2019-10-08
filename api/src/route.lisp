@@ -32,15 +32,19 @@
   (let ((graph         (get-graph))
         (email-address |mail|)
         (password      |password|))
-    (sign-in graph email-address password)))
+    (let ((ghost.controller:*session-key-name* "glpgs.session"))
+      (format t "~S~%" (list ghost.controller:*session-key-name*))
+      (sign-in graph email-address password))))
 
 
 (defroute ("/sign/out" :method :POST) ()
-  (sign-out))
+  (let ((ghost.controller:*session-key-name* "glpgs.session"))
+    (sign-out)))
 
 
 (defroute "/session/check" ()
-  (render-json (check-session)))
+  (let ((ghost.controller:*session-key-name* "glpgs.session"))
+    (render-json (check-session))))
 
 
 ;;;;;

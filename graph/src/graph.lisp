@@ -20,22 +20,36 @@
                (uiop:getenv "HOME")
                "/.ghost/graph/~a/"))
 
+
 (defun make-graph-stor-dir (code)
   (let ((code-string (string-downcase (symbol-name code))))
     (format nil *graph-stor-base-directory* code-string)))
+
 
 (defun graph-stor-dir (code)
   (merge-pathnames (make-graph-stor-dir code)
                    (system-source-directory :ghost.graph)))
 
+
+(defun set-graph-stor (code)
+  (setf (gethash code *graph-stor-directories*)
+        (graph-stor-dir code)))
+
+
 (defun set-default-graph-stor ()
-  (let ((code *graph-code-default*))
-    (setf (gethash code *graph-stor-directories*)
-          (graph-stor-dir code))))
+  (set-graph-stor *graph-code-default*))
+;;; create dafault store
 (set-default-graph-stor)
 
-(defun get-graph (code)
-  (gethash code *graphs*))
+
+(defun get-graph (code &key ensure)
+  (assert (keywordp code))
+  (let ((graph (gethash code *graphs*)))
+    (or graph
+        (when ensure
+          (set-graph-stor code)
+          (make-graph     code)))))
+
 
 (defun make-graph (code)
   (let ((path (gethash code *graph-stor-directories*)))
@@ -43,6 +57,8 @@
     (or (get-graph code)
         (setf (gethash code *graphs*)
               (shinra:make-banshou 'shinra:banshou path)))))
+
+
 
 ;;;;;
 ;;;;; Basic Operators

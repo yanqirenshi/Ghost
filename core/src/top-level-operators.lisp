@@ -7,7 +7,8 @@
         (84key  (tx-make-84key graph password)))
     (assert (and ghost deccot 84key))
     (tx-make-deccot-84key graph deccot 84key)
-    (tx-make-ghost-deccot graph ghost  deccot)))
+    (tx-make-ghost-deccot graph ghost  deccot)
+    (values ghost deccot)))
 
 (defun tx-make-ghost-with-deccot (graph &key (deccot-type :email) param)
   (assert graph)

@@ -36,6 +36,7 @@ Author: Satoshi Iwasaki (yanqirenshi@gmail.com)
                  (:file "email")
                  (:file "github")
                  (:file "gitlab")
+                 (:file "zaim")
                  (:module "relationships"
                   :components ((:file "ghost-deccot")
                                (:file "deccot-84key")))

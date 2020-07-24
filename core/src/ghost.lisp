@@ -4,8 +4,13 @@
   (shinra:tx-make-vertex graph 'ghost
                          (when %id `((%id ,%id)))))
 
+
 (defun get-ghost (graph &key %id)
   (shinra:get-vertex-at graph 'ghost :%id %id))
+
+
+(defun find-ghost (graph)
+  (shinra:find-vertex graph 'ghost))
 
 
 ;;;;;

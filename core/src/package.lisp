@@ -19,8 +19,14 @@
            #:buddhahood
            #:nirvana)
   (:export #:get-ghost
+           #:find-ghost
            #:tx-make-ghost)
   (:export #:get-email
            #:auth-deccot
-           #:deccot-ghost))
+           #:deccot-ghost)
+  (:export #:tx-make-ghost-with-deccot)
+  (:export #:tx-make-ghost-deccot-zaim
+           #:tx-ensure-ghost-deccot-zaim
+           #:get-ghost-zaim
+           #:save-access-token))
 (in-package :ghost)

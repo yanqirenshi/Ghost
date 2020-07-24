@@ -14,5 +14,17 @@
 
 
 (defclass google   (deccot) ())
+
 (defclass facebook (deccot) ())
+
 (defclass twitter  (deccot) ())
+
+(defclass zaim  (deccot)
+  ((request-token :documentation ""
+                  :accessor request-token
+                  :initarg  :request-token
+                  :initform nil)
+   (access-token :documentation ""
+                 :accessor access-token
+                 :initarg  :access-token
+                 :initform nil)))
